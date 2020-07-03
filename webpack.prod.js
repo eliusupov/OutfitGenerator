@@ -19,11 +19,6 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new webpack.ProvidePlugin({
-			jQuery: 'jquery',
-			$: 'jquery',
-			jquery: 'jquery'
-		}),
 		new CleanWebpackPlugin(['dist']),
 		new HtmlWebpackPlugin({
 			template: './index.html',

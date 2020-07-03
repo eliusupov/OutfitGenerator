@@ -1,7 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 const autoprefixer = require("autoprefixer");
 
@@ -11,11 +9,6 @@ module.exports = {
 		app: './index.js',
 	},
 	plugins: [
-		new webpack.ProvidePlugin({
-			jQuery: 'jquery',
-			$: 'jquery',
-			jquery: 'jquery'
-		}),
 		new HtmlWebpackPlugin({
 			template: './index.html',
 		}),
@@ -32,7 +25,7 @@ module.exports = {
 		path: path.resolve(__dirname, 'dist'),
 		publicPath: '/',
 	},
-	devtool: 'eval',
+	devtool: 'source-map',
 	devServer: {
 		port: 8080,
 		contentBase: [path.join(__dirname, 'dist'), path.join(__dirname, 'src')],
@@ -41,6 +34,11 @@ module.exports = {
 		disableHostCheck: true,
 		historyApiFallback: true,
 		publicPath: "/",
+	},
+	resolve: {
+		alias: {
+			'react-dom': '@hot-loader/react-dom',
+		},
 	},
 	module: {
 		rules: [
@@ -53,21 +51,20 @@ module.exports = {
 				test: /\.json$/,
 				loader: 'json-loader'
 			},
-			{ test: /bootstrap\/dist\/js\/umd\//, loader: 'imports?jQuery=jquery' },
 			{
 				test: /\.(sa|sc|c)ss$/,
 				use: [
 					'style-loader',
 					{
-						loader: "css-loader",
+						loader: 'css-loader',
 						options: {
-							modules: false,
-							localIdentName: '[local]__[hash:base64:5]',
+							modules: {
+								auto: true,
+								localIdentName: '[local]__[hash:base64:5]',
+							},
 						}
 					},
-					{
-						loader: 'postcss-loader',
-					},
+					'postcss-loader',
 					'sass-loader',
 				],
 			},

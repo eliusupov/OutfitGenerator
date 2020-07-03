@@ -1,0 +1,45 @@
+{
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": ["airbnb", "prettier"],
+  "parser": "babel-eslint",
+  "rules": {
+    "no-tabs": 0,
+    "linebreak-style": 0,
+    "indent": [0, "tab"],
+    //	"indent": ["error", 4],
+    "arrow-parens": ["error", "as-needed"],
+    "no-trailing-spaces": [
+      "error",
+      {
+        "skipBlankLines": true
+      }
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "ignorePattern": "^import "
+      }
+    ],
+    "react/jsx-indent-props": [2, "tab"],
+    "react/jsx-props-no-spreading": [0],
+    "react/jsx-indent": [2, "tab"],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "no-mixed-spaces-and-tabs": [0],
+    "no-return-assign": [0],
+    "react/state-in-constructor": ["warn", "never"],
+    "forbid-prop-types": "off",
+    "consistent-return": "off",
+    "react/no-unescaped-entities": "off",
+    "no-shadow": "off",
+    "react/jsx-curly-newline": "off"
+  }
+}
