@@ -1,0 +1,72 @@
+.system-entry {
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+
+	> form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 20%;
+
+		> h1 {
+			margin-bottom: 50px;
+		}
+
+		> label {
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			margin: 10px;
+			width: 100%;
+
+			> input {
+				width: 90%;
+				font-size: 16px;
+				border-radius: 6px;
+				border-radius: 6px;
+				padding: 15px;
+				border: .6px solid #e0dede;
+				background-color: #fff;
+				outline: none;
+			}
+		}
+
+		> div {
+			margin: 15px 0;
+		}
+
+		> .submit {
+			margin: 20px;
+
+			> input {
+				padding: 15px;
+				border-radius: 6px;
+				background-color: #fff;
+				border: .6px solid #e0dede;
+				outline: none;
+				cursor: pointer;
+			}
+
+			> i {
+				margin: 38px;
+			}
+		}
+
+		> .err {
+			color: red;
+			margin: 3px 0;
+			font-size: 12px;
+			max-width: 80%;
+		}
+
+		> .swap {
+			margin: 20px;
+			cursor: pointer;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}

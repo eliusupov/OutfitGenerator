@@ -1,0 +1,25 @@
+.not-found {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+
+	> i {
+		font-size: 100px;
+	}
+
+	> h1 {
+		font-size: 50px;
+	}
+
+	> a {
+		text-decoration: none;
+		color: #333333;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
